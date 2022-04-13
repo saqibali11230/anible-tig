@@ -1,6 +1,6 @@
 ---
 grafana_url: "http://localhost:3000"
 grafana_user: "admin"
-grafana_password: "2019Wisuda!#grafana"
+grafana_password: "qwe123"
 influxdb_url: 127.0.0.1:8086
-influxdb_database: "mikrotik.grafana"
+influxdb_database: "aunox"

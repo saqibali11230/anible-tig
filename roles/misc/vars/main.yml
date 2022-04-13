@@ -1,7 +1,4 @@
 ---
 base_packages:
-  - epel-release
   - ntp
-  - python-pip
-  - net-snmp
-  - net-snmp-utils
+  - python3-pip

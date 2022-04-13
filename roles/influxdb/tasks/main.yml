@@ -13,9 +13,17 @@
   pip:
     name: influxdb
 
-- name: create database and credential
-  influxdb_database:
+- name: Create database using custom credentials
+  community.general.influxdb_database:
     hostname: "{{influxdb_host}}"
     username: "{{influxdb_username}}"
     password: "{{influxdb_password}}"
     database_name: "{{influxdb_database}}"
+
+#- name: create database and credential
+#  influxdb_database:
+#   hostname: "{{influxdb_host}}"
+#    username: "{{influxdb_username}}"
+#    password: "{{influxdb_password}}"
+#    database_name: "{{influxdb_database}}"
+
