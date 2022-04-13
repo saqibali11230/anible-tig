@@ -1,0 +1,5 @@
+---
+- apt_repository:
+    repo: deb https://packages.grafana.com/oss/deb stable main
+    state: present
+  when: ansible_facts['os_family'] == "Debian"

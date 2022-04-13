@@ -1,0 +1,9 @@
+
+- name: install font requirements
+  apt:
+    name:
+      - fontconfig
+      - freetype*
+      - fonts-texgyre
+    state: latest
+  when: ansible_facts['os_family'] == "Debian"

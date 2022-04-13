@@ -1,0 +1,9 @@
+---
+
+- name: start ntp service
+  service:
+    name: ntp
+    state: started
+    enabled: yes
+  when: ansible_facts['os_family'] == "Debian"
+

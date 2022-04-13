@@ -1,0 +1,8 @@
+---
+- name: deploy Grafana
+  apt:
+    name: grafana
+    state: latest
+  notify:
+    - enabled grafana service
+  when: ansible_facts['os_family'] == "Debian"
