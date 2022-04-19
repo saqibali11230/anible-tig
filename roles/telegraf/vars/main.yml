@@ -1,6 +1,6 @@
 ---
 #influxdb_host: http://localhost:8086
-influxdb_host: http://10.10.10.240:8086
-influxdb_username: "telegraf"
-influxdb_password: "qwe123"
-influxdb_database: "aunox"
+influxdb_host: http://172.31.0.181:8086
+influxdb_username: "root"
+influxdb_password: ""
+influxdb_database: "devserver"
