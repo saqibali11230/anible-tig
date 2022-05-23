@@ -1,3 +1,10 @@
 ---
+---
+- include: install-redhat.yml
+  when: ansible_os_family == "RedHat"
+
+- include: install-debian.yml
+  when: ansible_os_family == "Debian"
+
 - name: deploy Telegraf
   import_tasks: telegraf.yml
