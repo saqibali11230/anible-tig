@@ -2,32 +2,32 @@
 
 # Configuration for telegraf agent
 [agent]
-	interval = "15s"
-	flush_interval = "30s"
-	hostname = ""
+   interval = "15s"
+   flush_interval = "30s"
+   hostname = "{{ ec2_name }}"
 
 ###############################################################################
 #                                  OUTPUTS                                    #
 ###############################################################################
 
 [[outputs.influxdb]]
-  #ADD URL FOR INFLUXDB ex. http://192.168.1.20:8086
-  database = "{{ influxdb_database }}"
-  urls = [ "{{ influxdb_host }}" ]
-  username = "{{ influxdb_username }}"
-  password = "{{ influxdb_password }}"
+   #ADD URL FOR INFLUXDB ex. http://192.168.1.20:8086
+   database = "{{ influx_DB }}"
+   urls = [ "{{ influxdb_host }}" ]
+   username = "{{ influxdb_username }}"
+   password = "{{ influxdb_password }}"
 
 ###############################################################################
 #                                  INPUTS                                     #
 ###############################################################################
 
 [[inputs.cpu]]
-    percpu = true
-    totalcpu = true
-    collect_cpu_time = false
-    report_active = false
+   percpu = true
+   totalcpu = true
+   collect_cpu_time = false
+   report_active = false
 [[inputs.disk]]
-    ignore_fs = ["tmpfs", "devtmpfs", "devfs"]
+   ignore_fs = ["tmpfs", "devtmpfs", "devfs"]
 [[inputs.io]]
 [[inputs.mem]]
 [[inputs.net]]
@@ -37,29 +37,28 @@
 [[inputs.processes]]
 [[inputs.kernel]]
 
- [[inputs.docker]]
-#   ## Docker Endpoint
-#   ##   To use TCP, set endpoint = "tcp://[ip]:[port]"
-#   ##   To use environment variables (ie, docker-machine), set endpoint = "ENV"
+[[inputs.docker]]
+## Docker Endpoint
+##   To use TCP, set endpoint = "tcp://[ip]:[port]"
+##   To use environment variables (ie, docker-machine), set endpoint = "ENV"
    endpoint = "unix:///var/run/docker.sock"
 #
-#   ## Set to true to collect Swarm metrics(desired_replicas, running_replicas)
+## Set to true to collect Swarm metrics(desired_replicas, running_replicas)
    gather_services = false
 #
-#   ## Set the source tag for the metrics to the container ID hostname, eg first 12 chars
+## Set the source tag for the metrics to the container ID hostname, eg first 12 chars
 #   source_tag = false
 #
-#   ## Containers to include and exclude. Globs accepted.
-#   ## Note that an empty array for both will include all containers
+## Containers to include and exclude. Globs accepted.
+## Note that an empty array for both will include all containers
    container_name_include = []
    container_name_exclude = []
 #
-#   ## Container states to include and exclude. Globs accepted.
-#   ## When empty only containers in the "running" state will be captured.
-#   ## example: container_state_include = ["created", "restarting", "running", "removing", "paused", "exited", "dead"]
-#   ## example: container_state_exclude = ["created", "restarting", "running", "removing", "paused", "exited", "dead"]
-#   # container_state_include = []
-#   # container_state_exclude = []
-#
-#   ## Timeout for docker list, info, and stats commands
+## Container states to include and exclude. Globs accepted.
+## When empty only containers in the "running" state will be captured.
+## example: container_state_include = ["created", "restarting", "running", "removing", "paused", "exited", "dead"]
+## example: container_state_exclude = ["created", "restarting", "running", "removing", "paused", "exited", "dead"]
+# container_state_include = []
+# container_state_exclude = []
+## Timeout for docker list, info, and stats commands
    timeout = "5s"

@@ -4,4 +4,17 @@ aun@10.10.10.240
 [clients]
 #192.168.5.161
 #192.168.5.162
-172.31.2.10
+#172.31.0.10    ec2_name=qa-docker-mgr-01 influx_DB=lnk360_EII_Dev_Docker
+#172.31.1.10    ec2_name=qa-docker-mgr-02 influx_DB=lnk360_EII_Dev_Docker
+#172.31.2.10    ec2_name=qa-docker-mgr-03 influx_DB=lnk360_EII_Dev_Docker
+#
+#172.31.0.20    ec2_name=qa-docker-wkr-01 influx_DB=lnk360_EII_Dev_Docker
+#172.31.1.20    ec2_name=qa-docker-wkr-02 influx_DB=lnk360_EII_Dev_Docker
+#172.31.2.20    ec2_name=qa-docker-wkr-03 influx_DB=lnk360_EII_Dev_Docker
+#
+#192.168.11.11  ec2_name=wfr-dev-foothold-1 influx_DB=lnk360_EII_Dev_Docker
+#192.168.11.12  ec2_name=wfr-dev-foothold-2 influx_DB=lnk360_EII_Dev_Docker
+
+192.168.10.81   ec2_name=device_gateway_wfr influx_DB=lnk360_EII_Dev_Docker
+#
+nexus.corp.mutualink.net        ec2_name=nexus_corp influx_DB=lnk360_EII_Dev_Docker
