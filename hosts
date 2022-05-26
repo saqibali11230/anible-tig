@@ -1,5 +1,5 @@
 [server]
-aun@10.10.10.240
+grafana-server@10.10.10.240
 
 [clients]
 #192.168.5.161
