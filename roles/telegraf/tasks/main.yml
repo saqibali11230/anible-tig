@@ -5,5 +5,8 @@
 - include: install-debian.yml
   when: ansible_os_family == "Debian"
 
+- include: install-windows.yml
+  when: ansible_os_family == "Windows"
+
 - name: deploy Telegraf
   import_tasks: telegraf.yml

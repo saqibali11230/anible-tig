@@ -15,18 +15,19 @@ grafana-server@10.10.10.240
 #192.168.11.11  ec2_name=wfr-dev-foothold-1 influx_DB=lnk360_EII_Dev_Docker
 #192.168.11.12  ec2_name=wfr-dev-foothold-2 influx_DB=lnk360_EII_Dev_Docker
 
-192.168.10.81   ec2_name=device_gateway_wfr influx_DB=lnk360_EII_Dev_Docker
+#192.168.10.81   ec2_name=device_gateway_wfr influx_DB=lnk360_EII_Dev_Docker
 #
 #nexus.corp.mutualink.net        ec2_name=nexus_corp influx_DB=nexus_corp
 
-172.31.0.30     ec2_name=qa-dev-dc-tx-01        influx_DB=EII_Dev_ForgeRock
-
-172.31.0.31     ec2_name=qa-dev-dc-tx-02        influx_DB=EII_Dev_ForgeRock
-
-172.31.0.32     ec2_name=qa-dev-dt-tx-01        influx_DB=EII_Dev_ForgeRock
-
-172.31.0.33     ec2_name=qa-dev-dt-tx-02        influx_DB=EII_Dev_ForgeRock
-
-172.31.0.34     ec2_name=qa-dev-du-tx-01        influx_DB=EII_Dev_ForgeRock
-
-172.31.0.35     ec2_name=qa-dev-du-tx-02        influx_DB=EII_Dev_ForgeRock
+#172.31.0.30     ec2_name=qa-dev-dc-tx-01        influx_DB=EII_Dev_ForgeRock
+#
+#172.31.0.31     ec2_name=qa-dev-dc-tx-02        influx_DB=EII_Dev_ForgeRock
+#
+#172.31.0.32     ec2_name=qa-dev-dt-tx-01        influx_DB=EII_Dev_ForgeRock
+#
+#172.31.0.33     ec2_name=qa-dev-dt-tx-02        influx_DB=EII_Dev_ForgeRock
+#
+#172.31.0.34     ec2_name=qa-dev-du-tx-01        influx_DB=EII_Dev_ForgeRock
+#
+#172.31.0.35     ec2_name=qa-dev-du-tx-02        influx_DB=EII_Dev_ForgeRock
+192.168.18.16	ansible_user=aun
