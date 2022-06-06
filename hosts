@@ -1,5 +1,5 @@
 [server]
-grafana-server@10.10.10.240
+server@10.10.10.240
 
 [clients]
 #192.168.5.161
@@ -19,15 +19,23 @@ grafana-server@10.10.10.240
 #
 #nexus.corp.mutualink.net        ec2_name=nexus_corp influx_DB=nexus_corp
 
-#172.31.0.30     ec2_name=qa-dev-dc-tx-01        influx_DB=EII_Dev_ForgeRock
-#
-#172.31.0.31     ec2_name=qa-dev-dc-tx-02        influx_DB=EII_Dev_ForgeRock
-#
-#172.31.0.32     ec2_name=qa-dev-dt-tx-01        influx_DB=EII_Dev_ForgeRock
-#
-#172.31.0.33     ec2_name=qa-dev-dt-tx-02        influx_DB=EII_Dev_ForgeRock
-#
-#172.31.0.34     ec2_name=qa-dev-du-tx-01        influx_DB=EII_Dev_ForgeRock
-#
-#172.31.0.35     ec2_name=qa-dev-du-tx-02        influx_DB=EII_Dev_ForgeRock
-192.168.18.16	ansible_user=aun
+172.31.0.30     ec2_name=qa-dev-dc-tx-01        influx_DB=EII_Dev_ForgeRock
+
+172.31.0.31     ec2_name=qa-dev-dc-tx-02        influx_DB=EII_Dev_ForgeRock
+
+172.31.0.32     ec2_name=qa-dev-dt-tx-01        influx_DB=EII_Dev_ForgeRock
+
+172.31.0.33     ec2_name=qa-dev-dt-tx-02        influx_DB=EII_Dev_ForgeRock
+
+172.31.0.34     ec2_name=qa-dev-du-tx-01        influx_DB=EII_Dev_ForgeRock
+
+172.31.0.35     ec2_name=qa-dev-du-tx-02        influx_DB=EII_Dev_ForgeRock
+
+[windows]
+192.168.5.75
+
+[windows:vars]
+ansible_user=Administrator
+ansible_password=L@b#Hq39zf!#
+ansible_connection=winrm
+ansible_winrm_server_cert_validation=ignore
