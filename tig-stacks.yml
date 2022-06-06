@@ -10,7 +10,6 @@
 
 - name: role telegraf agent
   hosts: windows
-  become: true
   roles:
     - telegraf
 
