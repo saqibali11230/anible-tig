@@ -10,3 +10,8 @@
     name: telegraf
     state: restarted
 
+- name: "Restart Windows Telegraf"
+  win_service:
+    name: Telegraf
+    start_mode: auto
+    state: restarted
