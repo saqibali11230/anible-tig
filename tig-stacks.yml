@@ -8,7 +8,13 @@
     - { role: influxdb, tags: influxdb }
     - { role: grafana, tags: grafana }
 
-- name: deploy TIG stacks
+- name: role telegraf agent
+  hosts: windows
+  become: true
+  roles:
+    - telegraf
+
+- name: role telegraf agent
   hosts: clients
   become: true
   roles:
