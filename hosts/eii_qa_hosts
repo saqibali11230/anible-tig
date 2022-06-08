@@ -1,0 +1,9 @@
+[clients]
+172.20.8.20	ec2_name=lnk360-qa1-forgerock-dt-01	influx_DB=EII_QA1_ForgeRock
+172.20.8.62	ec2_name=lnk360-qa1-forgerock-dt-02	influx_DB=EII_QA1_ForgeRock
+172.20.9.72	ec2_name=lnk360-qa1-forgerock-am-01	influx_DB=EII_QA1_ForgeRock
+172.20.9.94	ec2_name=lnk360-qa1-forgerock-am-02	influx_DB=EII_QA1_ForgeRock
+172.20.8.25	ec2_name=lnk360-qa1-forgerock-du-01	influx_DB=EII_QA1_ForgeRock
+172.20.8.42	ec2_name=lnk360-qa1-forgerock-du-02	influx_DB=EII_QA1_ForgeRock
+172.20.8.21	ec2_name=lnk360-qa1-forgerock-dc-01	influx_DB=EII_QA1_ForgeRock
+172.20.8.49	ec2_name=lnk360-qa1-forgerock-dc-02	influx_DB=EII_QA1_ForgeRock
