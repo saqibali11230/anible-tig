@@ -19,20 +19,27 @@ server@10.10.10.240
 #
 #nexus.corp.mutualink.net        ec2_name=nexus_corp influx_DB=nexus_corp
 
-172.31.0.30     ec2_name=qa-dev-dc-tx-01        influx_DB=EII_Dev_ForgeRock
-
-172.31.0.31     ec2_name=qa-dev-dc-tx-02        influx_DB=EII_Dev_ForgeRock
-
-172.31.0.32     ec2_name=qa-dev-dt-tx-01        influx_DB=EII_Dev_ForgeRock
-
-172.31.0.33     ec2_name=qa-dev-dt-tx-02        influx_DB=EII_Dev_ForgeRock
-
-172.31.0.34     ec2_name=qa-dev-du-tx-01        influx_DB=EII_Dev_ForgeRock
-
-172.31.0.35     ec2_name=qa-dev-du-tx-02        influx_DB=EII_Dev_ForgeRock
+#172.31.0.30     ec2_name=qa-dev-dc-tx-01        influx_DB=EII_Dev_ForgeRock
+#
+#172.31.0.31     ec2_name=qa-dev-dc-tx-02        influx_DB=EII_Dev_ForgeRock
+#
+#172.31.0.32     ec2_name=qa-dev-dt-tx-01        influx_DB=EII_Dev_ForgeRock
+#
+#172.31.0.33     ec2_name=qa-dev-dt-tx-02        influx_DB=EII_Dev_ForgeRock
+#
+#172.31.0.34     ec2_name=qa-dev-du-tx-01        influx_DB=EII_Dev_ForgeRock
+#
+#172.31.0.35     ec2_name=qa-dev-du-tx-02        influx_DB=EII_Dev_ForgeRock
+#
+#192.168.5.167     ec2_name=wfr-auto-ansible-1        influx_DB=ansible_workers
+#
+#got some error with apt repo; did manually
+#192.168.8.24    ec2_name=wfr-gitlab-ci-triangulation   influx_DB=wfr_git_runners
 
 [windows]
-192.168.5.75    ec2_name=wfr-gitlab-ci-blood-gulch   influx_DB=wfr_git_runners
+#192.168.5.75    ec2_name=wfr-gitlab-ci-blood-gulch   influx_DB=wfr_git_runners
+#192.168.5.76    ec2_name=boarding-action   influx_DB=wfr_git_runners
+192.168.5.59    ec2_name=wfr-gitlab-ci-chill-out   influx_DB=wfr_git_runners
 
 [windows:vars]
 ansible_user=Administrator
