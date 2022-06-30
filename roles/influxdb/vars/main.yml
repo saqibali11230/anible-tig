@@ -2,4 +2,4 @@
 influxdb_host: "127.0.0.1"
 influxdb_username: "telegraf"
 influxdb_password: "qwe123"
-influxdb_database: "aunox"
+influxdb_database: "mydatabase"
