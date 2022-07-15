@@ -37,7 +37,7 @@ server@10.10.10.240
 #
 #got some error with apt repo; did manually
 #192.168.8.24    ec2_name=wfr-gitlab-ci-triangulation   influx_DB=wfr_git_runners
-192.168.18.86 ansible_user=moiz
+192.168.18.86	ec2_name=wfr-gitlab-ci-triangulation   influx_DB=wfr_git_runners	ansible_user=moiz
 #127.0.0.1
 
 [windows]

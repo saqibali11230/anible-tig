@@ -2,8 +2,7 @@
 - name: deploy TIG stacks
   hosts: server
   become: true
-  roles: 
-    - { role: misc, tags: misc }
+  roles:
     - { role: telegraf, tags: telegraf }
     - { role: influxdb, tags: influxdb }
     - { role: grafana, tags: grafana }
@@ -17,5 +16,6 @@
   hosts: clients
   become: true
   roles:
+    - grafana
     - influxdb
-    #- telegraf
+    - telegraf
