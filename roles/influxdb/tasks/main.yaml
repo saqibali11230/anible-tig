@@ -1,0 +1,63 @@
+---
+- name: install base packages
+  ansible.builtin.apt:
+    name: "{{ base_packages }}"
+    state: present
+  when: ansible_facts['os_family'] == 'Debian'
+
+- name: start ntp service
+  ansible.builtin.service:
+    name: ntp
+    state: started
+    enabled: true
+  when: ansible_facts['os_family'] == "Debian"
+
+- name: add apt key InfluxData Repo
+  ansible.builtin.apt_key:
+    url: https://repos.influxdata.com/influxdb.key
+  when: ansible_facts['os_family'] == 'Debian'
+
+- name: add InfluxData Repo
+  ansible.builtin.apt_repository:
+    repo: deb https://repos.influxdata.com/ubuntu {{ ansible_distribution_release }} stable
+  when: ansible_facts['os_family'] == 'Debian'
+
+- name: install InfluxDB
+  ansible.builtin.apt:
+    name: influxdb
+  when: ansible_facts['os_family'] == 'Debian'
+
+- name: install influxdb python package
+  ansible.builtin.pip:
+    name: influxdb
+
+- name: enable and start influxd service
+  ansible.builtin.service:
+    name: influxd
+    state: restarted
+    enabled: true
+
+- name: Create a admin on localhost using default login credentials
+  community.general.influxdb_user:
+    user_name: "{{ influxdb_username }}"
+    user_password: "{{ influxdb_password }}"
+    admin: true
+  notify: restart influxdb
+
+- name: Enable influxdb authentication
+  ansible.builtin.lineinfile:
+    path: "/etc/influxdb/influxdb.conf"
+    line: "  auth-enabled = true"
+    insertafter: "  # Determines whether user authentication is enabled over HTTP/HTTPS."
+    state: present
+  register: enable_influxdb_auth
+  changed_when: |
+    enable_influxdb_auth.msg == "1 line(s) added" and disable_influxdb_auth.changed is false
+
+# Restarting influxdb is required after enabling authentication
+- name: Restart influxdb
+  ansible.builtin.service:
+    name: influxdb
+    state: restarted
+  when: enable_influxdb_auth
+  changed_when: false

@@ -1,24 +1,19 @@
 ---
 - name: Telegraf repository key
-  apt_key:
+  ansible.builtin.apt_key:
     url: https://repos.influxdata.com/influxdb.key
     keyring: /etc/apt/trusted.gpg.d/telegraf.gpg
     state: present
 
 - name: Telegraf repository
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: "deb https://repos.influxdata.com/ubuntu {{ ansible_distribution_release }} stable"
     state: present
     filename: telegraf
-  register: repo_telegraf
-
-- name: Update cache
-  apt:
-    update_cache: yes
-  when: repo_telegraf.changed
+    update_cache: true
 
 - name: Telegraf packages
-  apt:
+  ansible.builtin.apt:
     name:
       - telegraf
     state: present

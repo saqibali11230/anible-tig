@@ -1,10 +1,8 @@
 ---
-#influxdb_host: http://localhost:8086
 influxdb_host: http://172.31.0.181:8086
 influxdb_username: "root"
 influxdb_password: ""
 influxdb_database: "devserver"
-
 
 telegraf_agent_version: 1.22.4
 telegraf_win_install_dir: 'C:\Telegraf'

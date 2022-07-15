@@ -1,6 +1,6 @@
 ---
 - name: enabled grafana service
-  service:
+  ansible.builtin.service:
     name: grafana-server
     state: started
-    enabled: yes
+    enabled: true

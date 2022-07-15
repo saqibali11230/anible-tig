@@ -30,13 +30,15 @@ server@10.10.10.240
 #172.31.0.34     ec2_name=qa-dev-du-tx-01        influx_DB=EII_Dev_ForgeRock
 #
 #172.31.0.35     ec2_name=qa-dev-du-tx-02        influx_DB=EII_Dev_ForgeRock
-172.31.0.36     ec2_name=ForgeRock-am-01        influx_DB=EII_Dev_ForgeRock
-172.31.0.37     ec2_name=ForgeRock-am-02        influx_DB=EII_Dev_ForgeRock
+#172.31.0.36     ec2_name=ForgeRock-am-01        influx_DB=EII_Dev_ForgeRock
+#172.31.0.37     ec2_name=ForgeRock-am-02        influx_DB=EII_Dev_ForgeRock
 #
 #192.168.5.167     ec2_name=wfr-auto-ansible-1        influx_DB=ansible_workers
 #
 #got some error with apt repo; did manually
 #192.168.8.24    ec2_name=wfr-gitlab-ci-triangulation   influx_DB=wfr_git_runners
+192.168.18.86 ansible_user=moiz
+#127.0.0.1
 
 [windows]
 #192.168.5.75    ec2_name=wfr-gitlab-ci-blood-gulch   influx_DB=wfr_git_runners

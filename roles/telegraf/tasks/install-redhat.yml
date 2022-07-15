@@ -1,14 +1,14 @@
 ---
 - name: Add telegraf repository
-  yum_repository:
+  ansible.builtin.yum_repository:
     name: influxdb
     description: InfluxDB Repository - RHEL $releasever
     baseurl: https://repos.influxdata.com/rhel/$releasever/$basearch/stable
-    gpgcheck: yes
+    gpgcheck: true
     gpgkey: https://repos.influxdata.com/influxdb.key
 
 - name: Install Telegraf packages [RHEL/CentOS]
-  yum:
+  ansible.builtin.yum:
     name: telegraf
-    state: latest
-    update_cache: yes
+    state: present
+    update_cache: true

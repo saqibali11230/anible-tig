@@ -8,5 +8,27 @@
 - include: install-windows.yml
   when: ansible_os_family == "Windows"
 
-- name: deploy Telegraf
-  import_tasks: telegraf.yml
+- name: Copy telegraf.conf
+  ansible.builtin.template:
+    src: telegraf.conf.j2
+    dest: /etc/telegraf/telegraf.conf
+    owner: root
+    group: root
+    mode: "0644"
+  notify:
+    - restart telegraf service
+  when: ansible_os_family == "Debian" or ansible_os_family == "RedHat"
+
+- name: checking if docker.sock exists
+  ansible.builtin.stat:
+    path: /var/run/docker.sock
+  register: docker_file
+
+- name: changing docker.sock permission to 666
+  ansible.builtin.file:
+    path: /var/run/docker.sock
+    state: file
+    owner: root
+    group: root
+    mode: "0666"
+  when: docker_file.stat.exists

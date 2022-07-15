@@ -17,4 +17,5 @@
   hosts: clients
   become: true
   roles:
-    - telegraf
+    - influxdb
+    #- telegraf

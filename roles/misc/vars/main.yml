@@ -1,4 +1,0 @@
----
-base_packages:
-  - ntp
-  - python3-pip

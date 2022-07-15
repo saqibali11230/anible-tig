@@ -1,17 +1,17 @@
 ---
 - name: enabled telegraf service
-  service:
+  ansible.builtin.service:
     name: telegraf
     state: started
-    enabled: yes
+    enabled: true
 
 - name: restart telegraf service
-  service:
+  ansible.builtin.service:
     name: telegraf
     state: restarted
 
 - name: "Restart Windows Telegraf"
-  win_service:
+  ansible.windows.win_service:
     name: Telegraf
     start_mode: auto
     state: restarted
